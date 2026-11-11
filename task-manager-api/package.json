@@ -1,0 +1,16 @@
+{
+  "name": "task-manager-api",
+  "version": "1.0.0",
+  "description": "Task Manager API - Node.js, core http, Express and REST (Weeks 1-4)",
+  "main": "part-c-express-api/app.js",
+  "scripts": {
+    "cli": "node part-a-cli/cli.js",
+    "http": "node part-b-http-server/server.js",
+    "start": "node part-c-express-api/app.js"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
