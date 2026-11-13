@@ -67,6 +67,17 @@ const server = http.createServer((req, res) => {
   else if (url === "/about" && method === "GET") {
     sendJson(res, 200, { app: "Task Manager", version: "1.0.0" });
   }
+    // ROUTE 5: GET /tasks/1  -> get one task by id
+  else if (url.startsWith("/tasks/") && method === "GET") {
+    const id = Number(url.split("/")[2]);
+    const task = tasks.find((t) => t.id === id);
+
+    if (!task) {
+      return sendJson(res, 404, { error: "Task not found" });
+    }
+
+    sendJson(res, 200, task);
+  }
 
   // Anything else -> 404
   else {
